@@ -1,0 +1,14 @@
+world 5 5 _
+
+animal adult_trace .
+var t 3 -1
+status t <= 0 DEATH
+
+animal adult a
+var poids 0 0.25
+var _age 0 1
+status _age > 20 DEATH
+trace poids > 2 adult_trace
+
+
+agent 2 5 animal adult

@@ -1,0 +1,30 @@
+world 5 5 transparent.png
+
+mineral alive rock.png
+var _age 0 1
+var cailloux -5 0
+status _age > 20 DEATH
+field cailloux -1
+
+animal young animal_young.png
+var _age 0 1
+status _age > 5 adult
+sensor cailloux 2
+
+animal adult animal_adult.png
+var pheromone 3 0
+var _age 6 1
+status _age > 10 old
+birth pheromone > 2 young
+sensor cailloux 3
+field pheromone 3
+sensor pheromone 3
+
+animal old animal_old.png
+var _age 11 1
+status _age > 15 DEATH 
+sensor cailloux 1
+
+agent 2 5 animal young
+agent 4 1 animal young
+agent 3 3 mineral alive

@@ -1,0 +1,52 @@
+world 5 5 _
+
+mineral alive *
+var _age 0 1
+var cailloux -5 0
+status _age > 20 DEATH
+field cailloux -1
+
+vegetal young v
+var _age 0 1
+var vege 5 0
+status _age > 10 old
+field vege 1
+
+vegetal old V
+var _age 11 1
+var vege 7 0
+birth vege > 5 young
+status _age > 20 DEATH
+sensor vege 4 
+field vege 1
+
+animal young j
+var _age 0 1
+status _age > 5 adult
+sensor cailloux 2
+sensor vege 3
+
+animal adult a
+var pheromone 3 0
+var _age 6 1
+status _age > 10 old
+birth pheromone > 2 young
+sensor cailloux 3
+field pheromone 3
+sensor pheromone 3
+sensor vege 4
+
+animal old o
+var _age 11 1
+status _age > 15 DEATH 
+sensor cailloux 1
+sensor vege 2
+
+agent 1 2 vegetal young
+agent 1 3 vegetal young
+agent 5 5 vegetal young
+agent 3 3 vegetal young
+agent 2 1 animal young
+agent 2 5 animal young
+agent 3 3 mineral alive
+agent 5 4 animal young

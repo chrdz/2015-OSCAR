@@ -1,0 +1,46 @@
+world 5 5 _
+
+animal young_fem yf
+var _age 0 1
+status _age > 5 adult_fem
+sensor pheromone_fem 3
+
+animal adult_fem af
+var _age 6 1
+var pheromone_fem 3 0
+status _age > 10 old_fem
+birth pheromone_male > 2 young_fem
+birth pheromone_male > 2 young_male
+field pheromone_fem 1 
+sensor pheromone_male 3
+sensor pheromone_fem 1
+
+animal old_fem of
+var _age 11 1
+status _age > 15 DEATH
+
+
+animal young_male ym
+var _age 0 1
+status _age > 5 adult_male
+sensor pheromone_fem 3
+
+animal adult_male am
+var _age 19 1
+var pheromone_male 3 0
+status _age > 10 old_male
+field pheromone_male 1
+sensor pheromone_fem 3
+sensor pheromone_male 1
+
+animal old_male om
+var _age 11 1
+status _age > 15 DEATH
+
+agent 2 5 animal young_fem
+agent 4 1 animal young_male
+agent 1 5 animal young_fem
+agent 3 1 animal young_male
+agent 2 2 animal young_fem
+agent 5 1 animal young_male
+

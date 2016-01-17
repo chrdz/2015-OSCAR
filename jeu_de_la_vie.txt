@@ -1,0 +1,42 @@
+world 5 5 transparent.png
+
+animal alive animal_adult.png
+var presence 1 0
+var _age 0 1
+status presence > 3 dead
+status presence < 2 dead
+status _age > 15 DEATH
+field presence 1
+sensor presence 1
+
+animal dead transparent.png
+var _age 0 1
+status presence > 2 alive
+status _age > 15 DEATH
+sensor presence 1
+
+agent 3 2 animal alive
+agent 3 3 animal alive
+agent 3 4 animal alive
+agent 1 1 animal dead
+agent 1 2 animal dead
+agent 1 3 animal dead
+agent 1 4 animal dead
+agent 1 5 animal dead
+agent 2 1 animal dead
+agent 2 2 animal dead
+agent 2 3 animal dead
+agent 2 4 animal dead
+agent 2 5 animal dead
+agent 3 1 animal dead
+agent 3 5 animal dead
+agent 4 1 animal dead
+agent 4 2 animal dead
+agent 4 3 animal dead
+agent 4 4 animal dead
+agent 4 5 animal dead
+agent 5 1 animal dead
+agent 5 2 animal dead
+agent 5 3 animal dead
+agent 5 4 animal dead
+agent 5 5 animal dead

@@ -1,0 +1,38 @@
+world 5 5 transparent.png
+
+animal adult_trace animal_trace.png
+var t 3 -1
+var pherojeune 2 0
+status t <= 0 DEATH
+field pherojeune 1
+
+animal old_trace animal_trace.png
+var t 3 -1
+status t <= 0 DEATH
+
+animal young animal_young.png
+var _age 0 1
+status _age > 5 adult
+
+animal adult animal_adult.png
+var poids 1 0.25
+var _age 6 1
+var pheromone 5 0
+status _age > 20 old
+trace poids > 2 adult_trace
+birth pheromone >= 2 young
+field pheromone 1
+sensor pheromone 7
+
+animal old animal_old.png
+var _age 21 1
+var pherovieux 3 0
+status _age > 25 DEATH
+trace poids > 2 old_trace
+field pherovieux 1
+sensor pherovieux 2
+
+agent 2 5 animal young
+agent 1 5 animal young
+agent 3 5 animal young
+agent 2 4 animal young
