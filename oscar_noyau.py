@@ -1,3 +1,4 @@
+# coding: utf-8
 # ==============================================================================
 """NOYAU : OSCAR: Outil de Simulation Comportemental par Attraction-Répulsion"""
 # ==============================================================================
@@ -9,8 +10,8 @@ import pickle
 import copy
 from ezCLI import *
 import random
-import pygame
-from pygame.locals import *
+#import pygame
+#from pygame.locals import *
 #===============================================================================
 #===============================================================================
 class Mineral(object):
@@ -326,7 +327,10 @@ class World(object):
         for a in self.agents:
             a.live()#one more time of life for a
         del self.oldagents
-        self.oldagents=copy.deepcopy(self.agents)#update of oldagents
+        #self.oldagents=copy.deepcopy(self.agents)#update of oldagents
+        self.oldagents = [];        
+        for a in self.agents:
+            self.oldagents.append(Agent(self, a.x, a.y, a.status, a.sommet, a.v))#update of oldagents
         self.conflict()#resolve conflicts
 #-------------------------------------------------------------------------------
     def simu(self):

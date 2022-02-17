@@ -1,3 +1,4 @@
+# coding: utf-8
 # ==============================================================================
 """Interface TEXTE : OSCAR: Outil de Simulation Comportemental par Attraction-Répulsion"""
 # ==============================================================================
@@ -5,7 +6,7 @@ __author__  = "Pastureau Romain, Rodriguez Charlotte"
 __version__ = "1.0"
 __date__    = "2015-12-11"
 # ------------------------------------------------------------------------------
-from oscar_noyau import*
+from oscar_noyau import * 
 #===============================================================================
 #===============================================================================
 class TexteWorld(World):
@@ -46,7 +47,7 @@ if __name__ == "__main__":
     #nom_fichier="./fichiers_version_texte/t_animal_cailloux_vege_vieillesse.txt"
     #nom_fichier="./fichiers_version_texte/t_breed.txt"
     #nom_fichier="./fichiers_version_texte/t_jdv_36x19.txt"
-    #nom_fichier="./fichiers_version_texte/t_jdv_base.txt"
+    nom_fichier="./fichiers_version_texte/t_jdv_base.txt"
     #nom_fichier="./fichiers_version_texte/t_male_femelle.txt"
     #nom_fichier="./fichiers_version_texte/t_trace_seul.txt"
     #nom_fichier="./fichiers_version_texte/t_trace_seul_vieillesse.txt"

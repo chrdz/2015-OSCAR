@@ -1,12 +1,14 @@
 # ==============================================================================
 """Interface GRAPHIQUE : OSCAR: Outil de Simulation Comportemental par
-    Attraction-Répulsion"""
+    Attraction-Repulsion"""
 # ==============================================================================
 __author__  = "Pastureau Romain, Rodriguez Charlotte"
 __version__ = "1.0"
 __date__    = "2015-12-11"
 # ------------------------------------------------------------------------------
 from oscar_noyau import *
+import pygame
+from pygame.locals import *
 import os
 import sys
 import time
@@ -118,7 +120,7 @@ class GraphiqueWorld(World):
                         self.isplay = False
                     self.life()
                     self.blitplateau(t)
-    ##                    print("Génération ", self.generation)
+    ##                    print("Generation ", self.generation)
     ##                    for i in range(self.size[0]) :
     ##                        for j in range(self.size[1]) :
     ##                            if self.board[i][j] == [] :
@@ -165,10 +167,10 @@ if __name__ == "__main__":
     #trop lent:
     #nom_fichier="./fichiers_version_graphique/g_jdv_36x19.txt"
     
-    nom_fichier="./fichiers_version_graphique/g_animal_cailloux.txt"
+    #nom_fichier="./fichiers_version_graphique/g_animal_cailloux.txt"
     #nom_fichier="./fichiers_version_graphique/g_animal_cailloux_vege_vieillesse.txt"
     #nom_fichier="./fichiers_version_graphique/g_breed.txt"
-    #nom_fichier="./fichiers_version_graphique/g_jdv_base.txt"
+    nom_fichier="./fichiers_version_graphique/g_jdv_base.txt"
 
     #nom_fichier="./fichiers_version_graphique/g_trace_seul.txt"
     #nom_fichier="./fichiers_version_graphique/g_trace_seul_vieillesse.txt"
